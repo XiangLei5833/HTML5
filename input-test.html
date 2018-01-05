@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>增加的表单标签</title>
+</head>
+
+<body>
+<input type="number" name="demoNumber" min="1" max="100" step="1"/><br/>
+<!-- 限定了最大值和最小值，以及增加减少的步长 -->
+
+<input type="email" name="email" placeholder="请输入注册邮箱"/><br/>
+<!-- 文本框会自动校检是否符合邮箱正则表达式 -->
+
+<input type="url" placeholder="请输入网址" name="url"/><br/>
+
+<input type="tel" placeholder="输入电话" name="phone"/><br/>
+
+<input type="range" min="0" max="50" step="5" name="rangedemo" value="0"/><br/>
+
+<form oninput="output.value=parseInt(range.value)"/>
+    <input type="range" min="0" max="100" step="5" name="range" value="0"/>
+    <output name="output">0</output>
+</form>
+<br/>
+<!-- parseint:解析整型-->
+
+<input type="date" name="datedemo" value="2013.01.02"/><br/>
+
+<input type="color" name="colordemo"/><br/>
+
+<input type="text" autocomplete="on" name="demoAutoComplete" list="autoNames"/>
+<datalist id="autoNames">
+    <option value="实验楼"></option>
+    <option value="HTML5"></option>
+    <option value="input标签"></option>
+</datalist>
+</body>
+</html>
