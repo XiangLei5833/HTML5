@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.rog/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 该DID中包含所有的 html 元素和属性，包括展示性和弃用的元素，不允许框架集，必须以格式正确的xml来编写标记 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- xmlns 在 xhtml 中是必须的，在 html 中不必须，但是会被自动添加进去；
+ xmlns 可以在文档中定义一个或者多个命名空间，该属性可以放置在文档内的任何元素的开始标签中，浏览器会将此命名空间用于该属性所在元素内的所有内容-->
+<head>
+    <title></title>
+    <script src="~/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    <!-- src 规定外部脚本文件的 src -->
+        $(function() {
+                $("#btnGetFile").click(function(e){
+                    var fileList=document.getElementById("fileDemo").files;
+                    for (i=0; i<fileList.lengh; i++){
+                        if (!(/image\/\w+/.test(fileList[i].type))){
+                            $("#result").append("<span>type:"+fileList[i].type+"--******非图片类型*****--name:"+fileList[i].name+"--size:"+fileList[i].size+"</span><br/>");
+                    }
+                    else{
+                        $("#result").append("<span>type:"+fileList[i].type+"--name:"+fileList[i].name+"--size:"+fileList[i].size+"</span<br/>>");
+                    }
+                    }
+                    }); 
+                });
+    </script>
+</head>
+<body>
+    <form action="/home/index" method="POST" novalidate="true">
+    <!-- action:表示提交表单时向何处发送表单数据；　
+         novalidate:表示提交表单数据时不用进行验证 -->
+        <input type="file" muliple="multiple" name="fileDemo" id="fileDemo"/><br/>
+        <input type="button" value="获取文件的名字" id="btnGetFile"/>
+        <div id="result"></div>
+    </form>
+    <hr/>
+</body>
+</html>
