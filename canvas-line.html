@@ -1,0 +1,22 @@
+<html>
+<head></head>
+
+<body>
+    <canvas id="demoCanvas" width="500", height="600">
+    </canvas>
+    <script type="text/javascript">
+        // 通过 id 获得当前的 canvas 对象
+        var canvasDom = document.getElementById("demoCanvas");
+        // 通过 Canvas Dom 对象获取Context 的对象
+        var context = canvasDom.getContext("2d")
+        context.beginPath();  //开始绘制路径
+        context.moveTo(20,20);  //设置路径起点，坐标为(20,20)
+        context.lineTo(200,200);  //绘制一条(200,20)的直线
+        context.lineTo(400,20)
+        context.closePath();  //自动绘制一条当前点到起点的直线
+        context.lineWidth = 2.0;  //设置线宽
+        context.strokeStyle = "#CC0000";  //设置线的颜色
+        context.stroke(); //进行线的着色，此时线才可见
+    </script>
+</body>
+</html>
