@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Local-Storage</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 添加 key-value 数据到 sessionStorage
+        localStorage.setItem("demokey", "http://www.shiyanlou.com");
+        // 通过 key 来获取 value
+        var dt = localStorage.getItem("demokey");
+        alert(dt);
+        // 清空所有的 key-value 数据：localStorage.clear();
+        alert(localStorage.length);
+    </script>
+</body>
+</html>
+
+

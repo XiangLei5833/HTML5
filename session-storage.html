@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Session-Storage</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //添加 value-key 数据到 sessionStorage
+        sessionStorage.setItem("demokey", "http://blog.itjeek.com");
+        // 通过 key 来获取 value
+        var dt = sessionStorage.getItem("demokey");
+        alert(dt);
+        alert(sessionStorage.length);
+    </script>
+</body>
+</html>
